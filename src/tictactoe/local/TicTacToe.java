@@ -4,13 +4,12 @@ package tictactoe.local;
 import java.awt.*;
 
 public class TicTacToe extends javax.swing.JFrame{
-    static char board[][] = {{' ', ' ', ' '},{' ', ' ', ' '},{' ', ' ', ' '}};
     MapBottom mapBottom = new MapBottom();
 
 
     public void launch(){
         this.setVisible(true);
-        this.setSize(900, 900);
+        this.setSize(600, 600);
         this.setLocationRelativeTo(null);
         this.setTitle("Tic Tac Toe");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -19,10 +18,10 @@ public class TicTacToe extends javax.swing.JFrame{
     @Override
     public void paint(Graphics g){
         g.setColor(Color.darkGray);
-        g.drawLine(300, 0, 300, 900);
-        g.drawLine(600, 0, 600, 900);
-        g.drawLine(0, 300, 900, 300);
-        g.drawLine(0, 600, 900, 600);
+        g.drawLine(200, 0, 200, 600);
+        g.drawLine(400, 0, 400, 600);
+        g.drawLine(0, 200, 600, 200);
+        g.drawLine(0, 400, 600, 400);
     }
 
 
