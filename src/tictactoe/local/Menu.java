@@ -2,11 +2,10 @@ package tictactoe.local;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Menu extends JFrame {
-    static char board[][] = {{' ', ' ', ' '},{' ', ' ', ' '},{' ', ' ', ' '}};
-    MapBottom mapBottom = new MapBottom();
-
 
     public void launch(){
         this.setVisible(true);
@@ -14,20 +13,55 @@ public class Menu extends JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Tic Tac Toe");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                if(e.getButton()==1){
+                    TicTacToe.MOUSE_X = e.getX();
+                    TicTacToe.MOUSE_Y = e.getY();
+                    gameSelect();
+                }
+            }
+        });
+
     }
+
+    public static boolean isX = true;
+
+
+
+
 
     @Override
     public void paint(Graphics g){
-        g.setColor(Color.BLACK);
-
         g.setColor(Color.darkGray);
-        g.drawLine(250, 50, 250, 650);
-        g.drawLine(450, 50, 450, 650);
-        g.drawLine(50, 250, 650, 250);
-        g.drawLine(50, 450, 650, 450);
+
+        TicTacToe.drawWord(g, "Click to Choose", 150, 80, 30);
+        TicTacToe.drawWord(g, "If you want to move first or second", 150, 110, 30);
+
+        g.drawRect(150, 150, 400, 200);
+        TicTacToe.drawWord(g, "Move First", 250, 240, 50);
+        g.drawRect(150, 400, 400, 200);
+        TicTacToe.drawWord(g, "Move Second", 230, 490, 50);
     }
 
-//    Image Circle = Toolkit.getDefaultToolkit().getImage("imgs/O.png");
-//    Image Cross = Toolkit.getDefaultToolkit().getImage("imgs/X.png");
+
+    void gameSelect(){
+        if(TicTacToe.MOUSE_X > 150 && TicTacToe.MOUSE_X < 550) {
+            if (TicTacToe.MOUSE_Y > 150 && TicTacToe.MOUSE_Y < 350) {
+                TicTacToe.isX = false;TicTacToe ttt = new TicTacToe();
+                ttt.launch();
+                this.dispose();
+            }else if (TicTacToe.MOUSE_Y > 400 && TicTacToe.MOUSE_Y < 550) {
+                TicTacToe.isX = true;
+                TicTacToe ttt = new TicTacToe();
+                ttt.launch();
+                this.dispose();
+            }
+        }
+    }
 
 }

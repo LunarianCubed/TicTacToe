@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" afterDir="false" />
+    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="TicTacToe">
+      <change afterPath="$PROJECT_DIR$/img/O.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/X.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/MapBottom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,20 +30,20 @@
   </component>
   <component name="ProjectId" id="2NP0aadPJrHqbkGgz6b3kkOZaTv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/nightmeow/Code/TicTacToe"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -68,6 +68,9 @@
       <updated>1679550473682</updated>
       <workItem from="1679550475078" duration="1601000" />
       <workItem from="1679580179213" duration="9364000" />
+      <workItem from="1679764363767" duration="2752000" />
+      <workItem from="1679789906151" duration="18960000" />
+      <workItem from="1679912356095" duration="1314000" />
     </task>
     <servers />
   </component>
