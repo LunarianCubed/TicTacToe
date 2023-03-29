@@ -14,12 +14,12 @@ public class TicTacToe extends javax.swing.JFrame{
     public static boolean isX = true;
     static char player;
     static char computer;
+    boolean begin = false;
 
-    static int playerMove = 0;
-    static Image Circle = Toolkit.getDefaultToolkit().getImage("img/O.png");
-    static Image Cross = Toolkit.getDefaultToolkit().getImage("img/X.png");
+    Sign sign = new Sign();
 
-    static char board[][] = {{' ', ' ', ' '},{' ', ' ', ' '},{' ', ' ', ' '}};
+
+    public static char board[][] = {{' ', ' ', ' '},{' ', ' ', ' '},{' ', ' ', ' '}};
 
 
     public void launch(){
@@ -43,6 +43,17 @@ public class TicTacToe extends javax.swing.JFrame{
             }
         });
 
+
+//        while(true){
+//            repaint();
+//            try{
+//                Thread.sleep(40);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//
+//        }
+
     }
 
     @Override
@@ -53,12 +64,14 @@ public class TicTacToe extends javax.swing.JFrame{
         g.drawLine(50, 250, 650, 250);
         g.drawLine(50, 450, 650, 450);
 
+       sign.paintSelf(g);
 
-
-//        g.drawImage(Circle, 75, 75, 150, 150, this);
-//        g.drawImage(Circle, 300, 300, 100, 100, this);
 
     }
+
+
+
+
 
 
 
@@ -73,8 +86,7 @@ public class TicTacToe extends javax.swing.JFrame{
         else
             row = 2;
 
-        if(y < 250)
-            col = 0;
+        if(y < 250) col = 0;
         else if(y < 450)
             col = 1;
         else
@@ -174,20 +186,6 @@ public class TicTacToe extends javax.swing.JFrame{
     private static void drawPic(Graphics g, Image pic, int x, int y){
         g.drawImage(pic, 75 + x * 150, 75 + y * 150, 150, 150, null);
     }
-
-    public static void drawX(Graphics g, int x, int y){
-        drawPic(g, Cross, x, y);
-    }
-
-    public static void drawO(Graphics g, int x, int y){
-        drawPic(g, Circle, x, y);
-    }
-
-
-
-
-
-
 
 
 

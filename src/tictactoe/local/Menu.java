@@ -34,7 +34,6 @@ public class Menu extends JFrame {
 
 
 
-
     @Override
     public void paint(Graphics g){
         g.setColor(Color.darkGray);
@@ -44,8 +43,10 @@ public class Menu extends JFrame {
 
         g.drawRect(150, 150, 400, 200);
         TicTacToe.drawWord(g, "Move First", 250, 240, 50);
+        TicTacToe.drawWord(g, "Play as O", 250, 290, 30);
         g.drawRect(150, 400, 400, 200);
         TicTacToe.drawWord(g, "Move Second", 230, 490, 50);
+        TicTacToe.drawWord(g, "Play as X", 250, 540, 30);
     }
 
 

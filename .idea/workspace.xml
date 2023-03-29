@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="TicTacToe">
-      <change afterPath="$PROJECT_DIR$/img/O.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/X.png" afterDir="false" />
+    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="menu">
+      <change afterPath="$PROJECT_DIR$/src/tictactoe/local/Sign.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/MapBottom.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" afterDir="false" />
     </list>
