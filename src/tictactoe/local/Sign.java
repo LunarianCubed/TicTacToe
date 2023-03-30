@@ -2,28 +2,27 @@ package tictactoe.local;
 
 import java.awt.*;
 
-import static tictactoe.local.TicTacToe.board;
 
 public class Sign {
 
-    static final int OFFSET = 225;
-
-
-    static Image Circle = Toolkit.getDefaultToolkit().getImage("img/O.png");
-    static Image Cross = Toolkit.getDefaultToolkit().getImage("img/X.png");
     void paintSelf(Graphics g){
+        g.setColor(Color.BLACK);
+        g.drawLine(250, 50, 250, 650);
+        g.drawLine(450, 50, 450, 650);
+        g.drawLine(50, 250, 650, 250);
+        g.drawLine(50, 450, 650, 450);
+
 
         for(int i = 0; i < 3; i++){
-            for(int j = 0; i < 3; j++){
-                if(board[i][j]=='X'){
-                    g.drawImage(Circle, 75+OFFSET * i, 75+OFFSET*j, 150, 150, null);
+            for(int j = 0; j < 3; j++){
+                if(GameUtil.board[i][j]=='X'){
+                    g.drawImage(GameUtil.Cross, 75 + j * 200, 75 + i * 200, 150, 150, null);
                 }
-                if(board[i][j]=='O'){
-                    g.drawImage(Circle, 75+OFFSET * i, 75+OFFSET*j, 150, 150, null);
+                if(GameUtil.board[i][j]=='O'){
+                    g.drawImage(GameUtil.Circle, 75 + j * 200, 75 + i * 200, 150, 150, null);
                 }
             }
         }
-        g.drawImage(Circle, 300, 300, 100, 100, null);
 
 
     }
