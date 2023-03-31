@@ -2,37 +2,8 @@ package tictactoe.local;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class Menu extends JFrame {
-
-    public void launch(){
-        this.setVisible(true);
-        this.setSize(700, 700);
-        this.setLocationRelativeTo(null);
-        this.setTitle("Tic Tac Toe");
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-
-        this.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                if(e.getButton()==1){
-                    GameUtil.MOUSE_X = e.getX();
-                    GameUtil.MOUSE_Y = e.getY();
-                    gameSelect();
-                }
-            }
-        });
-
-    }
-
-    public static boolean isX = true;
-
-
-
 
     public void paintSelf(Graphics g){
         g.setColor(Color.darkGray);
