@@ -34,30 +34,28 @@ public class TicTacToe extends javax.swing.JFrame{
                     GameUtil.MOUSE_X = e.getX();
                     GameUtil.MOUSE_Y = e.getY();
                 }
-                switch (GameUtil.gameStatus){
-                    case 0:
+                switch (GameUtil.gameStatus) {
+                    case 0 -> {
                         menu.gameSelect();
-                        repaint();
-                        break;
-                    case 1:
+                        repaint(800);
+                    }
+                    case 1 -> {
                         playerMove();
-                        repaint();
-                        break;
-                    case 2:
-                        repaint();
-                        break;
+                        repaint(200);
+                    }
+                    case 2 -> repaint(200);
                 }
 
             }
         });
 
-        while (true){
-            try{
-                Thread.sleep(500);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-        }
+//        while (true){
+//            try{
+//                Thread.sleep(500);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//        }
 
     }
 
@@ -65,23 +63,21 @@ public class TicTacToe extends javax.swing.JFrame{
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.darkGray);
+        bufferImage = this.createImage(700, 700);
+        Graphics buffer = bufferImage.getGraphics();
 
-        switch (GameUtil.gameStatus){
-            case 0:
-                menu.paintSelf(g);
-                break;
-            case 1:
-                bufferImage = this.createImage(700, 700);
-                Graphics buffer = bufferImage.getGraphics();
-                buffer.setColor(Color.gray);
+
+        switch (GameUtil.gameStatus) {
+            case 0 -> menu.paintSelf(buffer);
+            case 1 -> {
                 sign.paintSelf(buffer);
-                buffer.drawImage(bufferImage, 0, 0, null);
+            }
 //                sign.paintSelf(g);
-                break;
-            case 2:
-                gameEnd.paintSelf(g);
-                break;
+            case 2 -> gameEnd.paintSelf(buffer);
         }
+
+
+        g.drawImage(bufferImage, 0, 0,null);
 
     }
 

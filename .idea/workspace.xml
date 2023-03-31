@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="Left: MM">
-      <change afterPath="$PROJECT_DIR$/src/tictactoe/local/GameEnd.java" afterDir="false" />
+    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="add: GameEnd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/GameUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/GameUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,14 +35,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -81,7 +78,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680244281083</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add: GameEnd">
+      <created>1680297567968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680297567968</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Left: MM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Left: MM" />
+    <MESSAGE value="add: GameEnd" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: GameEnd" />
   </component>
 </project>
