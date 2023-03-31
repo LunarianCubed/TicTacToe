@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="TicTacToe">
-      <change afterPath="$PROJECT_DIR$/src/tictactoe/local/GameUtil.java" afterDir="false" />
+    <list default="true" id="4287e075-9ec4-485a-b397-b39bd04cd7eb" name="Changes" comment="draw">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tictactoe/local/GameUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/GameUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tictactoe/local/Sign.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/Sign.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tictactoe/local/TicTacToe.java" afterDir="false" />
     </list>
@@ -43,8 +41,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.maddyhome.idea.vim.ui.VimEmulationConfigurable&quot;
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RunManager">
@@ -74,8 +71,6 @@
       <workItem from="1679764363767" duration="2752000" />
       <workItem from="1679789906151" duration="18960000" />
       <workItem from="1679912356095" duration="1314000" />
-      <workItem from="1680097593874" duration="1704000" />
-      <workItem from="1680110918439" duration="18485000" />
     </task>
     <servers />
   </component>

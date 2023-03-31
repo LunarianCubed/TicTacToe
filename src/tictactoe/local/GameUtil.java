@@ -13,11 +13,12 @@ public class GameUtil {
     static int gameStatus = 0;
 
     static boolean isX = true;
+    static int moveLeft = 9;
     static char player;
     static char computer;
+    static boolean click=false;
 
-
-    static final int OFFSET = 225;
+    static final int OFFSET = 200;
     static Image Circle = Toolkit.getDefaultToolkit().getImage("img/O.png");
     static Image Cross = Toolkit.getDefaultToolkit().getImage("img/X.png");
 
