@@ -35,27 +35,21 @@ public class TicTacToe extends javax.swing.JFrame{
                     GameUtil.MOUSE_Y = e.getY();
                 }
                 switch (GameUtil.gameStatus) {
-                    case 0 -> {
-                        menu.gameSelect();
-                        repaint(800);
-                    }
-                    case 1 -> {
-                        playerMove();
-                        repaint(200);
-                    }
-                    case 2 -> repaint(200);
+                    case 0 -> menu.gameSelect();
+                    case 1 -> gameStart();
                 }
 
             }
         });
 
-//        while (true){
-//            try{
-//                Thread.sleep(500);
-//            }catch (InterruptedException e){
-//                e.printStackTrace();
-//            }
-//        }
+        while (true){
+            try{
+                Thread.sleep(100);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            repaint();
+        }
 
     }
 
@@ -69,9 +63,7 @@ public class TicTacToe extends javax.swing.JFrame{
 
         switch (GameUtil.gameStatus) {
             case 0 -> menu.paintSelf(buffer);
-            case 1 -> {
-                sign.paintSelf(buffer);
-            }
+            case 1 -> sign.paintSelf(buffer);
 //                sign.paintSelf(g);
             case 2 -> gameEnd.paintSelf(buffer);
         }
@@ -84,6 +76,19 @@ public class TicTacToe extends javax.swing.JFrame{
 
     private static int[] findBestMove(){
         int[] bestMove = new int[2];
+        int bestVal = -1000;
+        for(int i = 0; i < 9; i++){
+            if(GameUtil.board[i/3][i%3]==' '){
+                GameUtil.board[i/3][i%3] = GameUtil.computer;
+                int moveVal = minimax(0, false);
+                GameUtil.board[i/3][i%3] = ' ';
+                if(moveVal > bestVal){
+                    bestMove[0] = i/3;
+                    bestMove[1] = i%3;
+                    bestVal = moveVal;
+                }
+            }
+        }
         return bestMove;
     }
 
@@ -101,43 +106,86 @@ public class TicTacToe extends javax.swing.JFrame{
                     (GameUtil.board[0][1] == GameUtil.player && GameUtil.board[2][1] == GameUtil.player) ||
                     (GameUtil.board[0][2] == GameUtil.player && GameUtil.board[2][0] == GameUtil.player) ||
                     (GameUtil.board[1][0] == GameUtil.player && GameUtil.board[1][2] == GameUtil.player))
-                return 1;
+                return -1;
         }
         if(GameUtil.board[0][0] == GameUtil.player) {
             if ((GameUtil.board[0][1] == GameUtil.player && GameUtil.board[0][2] == GameUtil.player) ||
                     (GameUtil.board[1][0] == GameUtil.player && GameUtil.board[2][0] == GameUtil.player))
-                return 1;
+                return -1;
         }
         if(GameUtil.board[2][2] == GameUtil.player) {
             if ((GameUtil.board[0][2] == GameUtil.player && GameUtil.board[1][2] == GameUtil.player) ||
                     (GameUtil.board[2][0] == GameUtil.player && GameUtil.board[2][1] == GameUtil.player))
-                return 1;
+                return -1;
         }
         if(GameUtil.board[1][1]==GameUtil.computer) {
-            if ((GameUtil.board[0][0] == GameUtil.computer && GameUtil.board[2][2] == 'O') ||
-                    (GameUtil.board[0][1] == GameUtil.computer && GameUtil.board[2][1] == 'O') ||
-                    (GameUtil.board[0][2] == GameUtil.computer && GameUtil.board[2][0] == 'O') ||
-                    (GameUtil.board[1][0] == GameUtil.computer && GameUtil.board[1][2] == 'O'))
-                return -1;
+            if ((GameUtil.board[0][0] == GameUtil.computer && GameUtil.board[2][2] == GameUtil.computer) ||
+                    (GameUtil.board[0][1] == GameUtil.computer && GameUtil.board[2][1] == GameUtil.computer) ||
+                    (GameUtil.board[0][2] == GameUtil.computer && GameUtil.board[2][0] == GameUtil.computer) ||
+                    (GameUtil.board[1][0] == GameUtil.computer && GameUtil.board[1][2] == GameUtil.computer))
+                return 1;
         }
         if(GameUtil.board[0][0] == GameUtil.computer) {
-            if ((GameUtil.board[0][1] == GameUtil.computer && GameUtil.board[0][2] == 'O') ||
-                    (GameUtil.board[1][0] == GameUtil.computer && GameUtil.board[2][0] == 'O'))
-                return -1;
+            if ((GameUtil.board[0][1] == GameUtil.computer && GameUtil.board[0][2] == GameUtil.computer) ||
+                    (GameUtil.board[1][0] == GameUtil.computer && GameUtil.board[2][0] == GameUtil.computer))
+                return 1;
         }
         if(GameUtil.board[2][2] == GameUtil.computer) {
-            if ((GameUtil.board[0][2] == GameUtil.computer && GameUtil.board[1][2] == 'O') ||
-                    (GameUtil.board[2][0] == GameUtil.computer && GameUtil.board[2][1] == 'O'))
-                return -1;
+            if ((GameUtil.board[0][2] == GameUtil.computer && GameUtil.board[1][2] == GameUtil.computer) ||
+                    (GameUtil.board[2][0] == GameUtil.computer && GameUtil.board[2][1] == GameUtil.computer))
+                return 1;
         }
         return 0;
 
     }
 
-    private static void computerMove() {
 
+    private static int minimax(int depth, boolean isMaximizing) {
+        int score = evaluate();
+        if(score == 1)
+            return score;
+        if(score == -1)
+            return score;
+        if(!isMoveLeft())
+            return 0;
+
+        if(isMaximizing){
+            int best = -1000;
+            for(int i = 0; i < 9; i++){
+                if(GameUtil.board[i/3][i%3]==' '){
+                    GameUtil.board[i/3][i%3] = GameUtil.computer;
+                    best = Math.max(best, minimax(depth+1, false));
+                    GameUtil.board[i/3][i%3] = ' ';
+                }
+            }
+            return best;
+        }else{
+            int best = 1000;
+            for(int i = 0; i < 9; i++){
+                if(GameUtil.board[i/3][i%3]==' '){
+                    GameUtil.board[i/3][i%3] = GameUtil.player;
+                    best = Math.min(best, minimax(depth+1, true));
+                    GameUtil.board[i/3][i%3] = ' ';
+                }
+            }
+            return best;
+        }
+    }
+
+
+    private static void computerMove() {
+        if(evaluate()!=0||!isMoveLeft()) {
+            GameUtil.gameStatus = 2;
+            return;
+        }
+        int[] bestMove = findBestMove();
         if(isMoveLeft())
-            put(GameUtil.computer, findBestMove()[0], findBestMove()[1]);
+            put(GameUtil.computer, bestMove[0],bestMove[1]);
+        for(char[] a: GameUtil.board)
+            System.out.println(Arrays.toString(a));
+        if(evaluate()!=0||!isMoveLeft()) {
+            GameUtil.gameStatus = 2;
+        }
     }
 
     private static void playerMove(){
@@ -156,18 +204,19 @@ public class TicTacToe extends javax.swing.JFrame{
         else
             row = 2;
 
-        put(GameUtil.player, row, col);
+        if(put(GameUtil.player, row, col))
+            computerMove();
 
         for(char[] a: GameUtil.board)
             System.out.println(Arrays.toString(a));
-
-        computerMove();
     }
 
-    private static void put(char c, int x, int y){
+    private static boolean put(char c, int x, int y){
         if(GameUtil.board[x][y] == ' '){
             GameUtil.board[x][y] = c;
+            return true;
         }
+        return false;
     }
 
 
@@ -184,17 +233,9 @@ public class TicTacToe extends javax.swing.JFrame{
 
 
     private static void gameStart(){
-        if(!GameUtil.isX){
-           playerMove();
+        if(GameUtil.isX){
+            put(GameUtil.computer, 1,1);
         }
-        while(GameUtil.gameStatus==1){
-            computerMove();
-            if(evaluate()!=0&&isMoveLeft())
-                playerMove();
-        }
+        playerMove();
     }
-
-
-
-
 }
